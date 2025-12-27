@@ -1,0 +1,306 @@
+/* Base reset – kept intentionally minimal */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-page: #0f172a;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --text-main: #0f172a;
+  --text-muted: #6b7280;
+  --border-subtle: #e5e7eb;
+  --radius-lg: 12px;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* App layout */
+.app-root {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #020617 0, #020617 140px, #f8fafc 140px);
+}
+
+.app-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Sections */
+.section {
+  padding: 3rem 0 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Hero */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 2.3fr);
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4vw, 2.9rem);
+  margin: 0.65rem 0 0.35rem;
+}
+
+.hero-highlight {
+  color: var(--primary);
+}
+
+.hero-text {
+  margin: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.hero-search {
+  background-color: #ffffff;
+  padding: 0.85rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  max-width: 480px;
+}
+
+.hero-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.hero-search-button {
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.hero-search-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.hero-meta {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Hero right card */
+.hero-card {
+  background-color: #020617;
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.hero-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+}
+
+.hero-card-text {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #cbd5f5;
+}
+
+.hero-list {
+  margin-top: 1.1rem;
+  padding-left: 1.05rem;
+  font-size: 0.86rem;
+  color: #e5e7eb;
+}
+
+/* Shared grids */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Course card */
+.course-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card-body {
+  padding: 0.85rem 0.95rem 1rem;
+}
+
+.course-category {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.course-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0 0 0.28rem;
+}
+
+.course-author {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+}
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.55rem;
+}
+
+.course-stars {
+  color: #fbbf24;
+  font-size: 0.8rem;
+}
+
+.course-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.course-price {
+  font-weight: 700;
+}
+
+.course-old-price {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.course-badge {
+  display: inline-block;
+  margin-top: 0.55rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #fef3c7;
+  border-radius: 4px;
+}
+
+/* Categories */
+.category-pill {
+  text-align: left;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 16px rgba(15, 23, 42, 0.05);
+  transition: transform 0.13s ease, box-shadow 0.13s ease;
+}
+
+.category-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+}
+
+.category-name {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.category-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Trusted companies */
+.trusted-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.trusted-logo {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: #6b7280;
+}
